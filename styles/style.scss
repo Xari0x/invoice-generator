@@ -1,0 +1,448 @@
+@font-face {
+    font-family: "HankenGrotesk-Medium";
+    src: url(../fonts/HankenGrotesk-Medium.ttf);
+}
+
+@font-face {
+    font-family: "HankenGrotesk-Black";
+    src: url(../fonts/HankenGrotesk-Black.ttf);
+}
+
+@font-face {
+    font-family: "HankenGrotesk-Bold";
+    src: url(../fonts/HankenGrotesk-Bold.ttf);
+}
+
+@font-face {
+    font-family: "HankenGrotesk-Light";
+    src: url(../fonts/HankenGrotesk-Light.ttf);
+}
+
+@font-face {
+    font-family: "HankenGrotesk-Thin";
+    src: url(../fonts/HankenGrotesk-Thin.ttf);
+}
+
+@font-face {
+    font-family: "HankenGrotesk-Regular";
+    src: url(../fonts/HankenGrotesk-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+}
+
+::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: white;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+
+    body {
+        color: #ffffffde;
+        width: 100%;
+        height: 100%;
+        background-color: #F3F3F3;
+        background-image: linear-gradient(0deg, transparent 24%, #E1E1E1 25%, #E1E1E1 26%, transparent 27%,transparent 74%, #E1E1E1 75%, #E1E1E1 76%, transparent 77%,transparent),
+            linear-gradient(90deg, transparent 24%, #E1E1E1 25%, #E1E1E1 26%, transparent 27%,transparent 74%, #E1E1E1 75%, #E1E1E1 76%, transparent 77%,transparent);
+        background-size: 55px 55px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+
+        .container{
+            width: 700px;
+            height: 900px;
+            position: relative;
+
+            background-color: white;
+
+            box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.200);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            gap: 20px;
+        }
+    }
+}
+
+.logo_upload{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 40px;
+    left: 45px;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    border-radius: 10px;
+    transition: .2s;
+    border: 2px dashed transparent;
+    background-color: #b9b9b9;
+
+    .logo{
+        width: 100%;
+        outline: none;
+        border: none;
+        opacity: 0;
+    }
+    
+    .logo_input{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        opacity: 0;
+        outline: none;
+        border: none;
+        overflow: hidden;
+        z-index: 99;
+    }
+
+    &:hover{
+        border: 2px dashed #797979;
+        background-color: #E1E1E1;
+    }
+}
+
+.inputs {
+    border: none;
+    outline: none;
+    transition: .2s;
+    border: 2px dashed transparent;
+    border-radius: 10px;
+    color: #797979b2;
+    font-family: "HankenGrotesk-Regular";
+
+    &:hover{
+        cursor: pointer;
+        border: 2px dashed #797979;
+    }
+}
+
+.unsaved {
+    border: none;
+    outline: none;
+    transition: .2s;
+    border: 2px dashed transparent;
+    border-radius: 10px;
+    color: #797979b2;
+    font-family: "HankenGrotesk-Regular";
+
+    &:hover{
+        cursor: pointer;
+        border: 2px dashed #797979;
+    }
+}
+
+.print_pdf {
+    position: absolute;
+    width: 120px;
+    height: 50px;
+    left: calc(50% - 500px);
+    margin-bottom: 65px;
+    outline: none;
+    color: #797979;
+    border: 2px solid #797979;
+    font-family: "HankenGrotesk-Medium";
+    font-size: 15px;
+    background-color: transparent;
+    border-radius: 10px;
+    transition: .2s;
+
+    &:hover{
+        scale: 1.1;
+        cursor: pointer;
+    }
+}
+
+.clear {
+    position: absolute;
+    width: 120px;
+    margin-top: 65px;
+    height: 50px;
+    left: calc(50% - 500px);
+    outline: none;
+    color: #797979;
+    border: 2px solid #797979;
+    font-family: "HankenGrotesk-Medium";
+    font-size: 15px;
+    background-color: transparent;
+    border-radius: 10px;
+    transition: .2s;
+
+    &:hover{
+        scale: 1.1;
+        cursor: pointer;
+    }
+}
+
+.invoice-title{
+    position: absolute;
+    right: 40px;
+    top: 75px;
+    text-align: right;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 30px;
+    border-radius: 10px;
+    transition: .2s;
+    font-family: "HankenGrotesk-Black";
+}
+
+.invoice-date{
+    position: absolute;
+    right: 40px;
+    top: 120px;
+    text-align: right;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 15px;
+    border-radius: 10px;
+    transition: .2s;
+    font-family: "HankenGrotesk-Black";
+}
+
+.invoice-subtitle{
+    position: absolute;
+    left: 35px;
+    top: 310px;
+    text-align: left;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 15px;
+    border-radius: 10px;
+    transition: .2s;
+    font-family: "HankenGrotesk-Regular";
+}
+
+.invoice-contacts{
+    position: absolute;
+    bottom: 25px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.invoice-details{
+    position: absolute;
+    bottom: 55px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.invoice-address-title{
+    position: absolute;
+    top: 180px;
+    left: 35px;
+    font-size: 14px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-family: "HankenGrotesk-Bold";
+}
+
+.invoice-address{
+    position: absolute;
+    top: 205px;
+    left: 45px;
+    font-size: 14px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 2px;
+        height: 73px;
+        background-color: #797979;
+    }
+}
+
+.invoice-number-title{
+    position: absolute;
+    top: 180px;
+    left: 350px;
+    font-size: 14px;
+    text-align: right;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-family: "HankenGrotesk-Bold";
+}
+
+.invoice-number{
+    position: absolute;
+    top: 205px;
+    left: 350px;
+    text-align: right;
+    font-size: 14px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.invoice-week-title{
+    position: absolute;
+    top: 235px;
+    left: 350px;
+    font-size: 14px;
+    text-align: right;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-family: "HankenGrotesk-Bold";
+}
+
+.invoice-week{
+    position: absolute;
+    top: 260px;
+    left: 350px;
+    text-align: right;
+    font-size: 14px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.topbar {
+    position: absolute;
+    top: 340px;
+    background-color: #797979;
+    color: white;
+    width: 615px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 5px;
+
+    .invoice-article{
+        height: 30px;
+        width: 175px;
+        color: white;
+        line-height: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-right: 10px;
+        padding-left: 10px;
+        font-size: 13px;
+        font-family: "HankenGrotesk-Light";
+
+        &:hover{
+            border-color: white;
+        }
+    }
+
+    .invoice-qtyprice{
+        height: 30px;
+        width: 80px;
+        color: white;
+        line-height: 30px;
+        padding-right: 10px;
+        padding-left: 10px;
+        margin-right: 20px;
+        text-align: right;
+        font-size: 13px;
+        font-family: "HankenGrotesk-Light";
+
+        &:hover{
+            border-color: white;
+        }
+    }
+}
+
+.details {
+    position: absolute;
+    top: 390px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    .line{
+        background-color: #cfcfcf;
+        color: rgb(24, 24, 24);
+        width: 615px;
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 5px;
+        
+        .details-article{
+            height: 30px;
+            width: 175px;
+            line-height: 30px;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding-right: 10px;
+            padding-left: 10px;
+            font-size: 13px;
+            font-family: "HankenGrotesk-Bold";
+
+            &:hover{
+                border-color: white;
+            }
+        }
+
+        .details-qtyprice{
+            height: 30px;
+            width: 80px;
+            line-height: 30px;
+            padding-right: 10px;
+            padding-left: 10px;
+            margin-right: 20px;
+            text-align: right;
+            font-size: 13px;
+            font-family: "HankenGrotesk-Bold";
+
+            &:hover{
+                border-color: white;
+            }
+        }
+    }
+    
+}
+
+.result-adjustments {
+    position: absolute;
+    bottom: 190px;
+    right: 45px;
+    background-color: #cfcfcf;
+    color: rgb(102, 102, 102);
+    width: 100px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    text-align: right;
+    padding-right: 10px;
+    padding-left: 10px;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: "HankenGrotesk-Bold";
+}

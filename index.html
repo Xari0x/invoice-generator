@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <script src="./libs/jquery.js"></script>
+    <script src="./libs/html2canvas.min.js"></script>
+    <script src="./libs/jspdf.umd.min.js"></script>
+    <script src="./fonts/HankenGrotesk-Medium-normal.js"></script>
+    <script src="./fonts/HankenGrotesk-Bold-normal.js"></script>
+    <script src="./fonts/HankenGrotesk-Black-normal.js"></script>
+    <script src="./fonts/HankenGrotesk-Light-normal.js"></script>
+    <script src="./fonts/HankenGrotesk-Thin-normal.js"></script>
+    <script src="./fonts/HankenGrotesk-Regular-normal.js"></script>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./styles/style-min.css">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de factures - Jordqn</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <button class="ignorePDF print_pdf" id="print_pdf">Exporter</button>
+        <button class="ignorePDF clear" id="clear">Nettoyer</button>
+        <button class="logo_upload" id="logo_upload">
+            <input tabindex="-1" type="file" accept="image/*" id="logo_input" class="logo_input">
+            <img class="logo" id="logo" src="">
+        </button>
+        <div class="topbar">
+            <span id="topbar-article" class="inputs invoice-article" spellcheck=false contenteditable="true">Article</span>
+            <span id="topbar-qty1" class="inputs invoice-qtyprice" spellcheck=false contenteditable="true">Quantité</span>
+            <span id="topbar-qty2" class="inputs invoice-qtyprice" spellcheck=false contenteditable="true">Détails</span>
+            <span id="topbar-qty3" class="inputs invoice-qtyprice" spellcheck=false contenteditable="true">Prix/u</span>
+        </div>
+        <div class="details">
+            <div class="line">
+                <span id="details-article" class="unsaved details-article" spellcheck=false contenteditable="true"></span>
+                <span id="details-qty1" class="unsaved details-qtyprice" spellcheck=false contenteditable="true"></span>
+                <span id="details-qty2" class="unsaved details-qtyprice" spellcheck=false contenteditable="true"></span>
+                <span id="details-qty3" class="unsaved details-qtyprice" spellcheck=false contenteditable="true">0€</span>
+            </div>
+            <div class="line">
+                <span id="details-article" class="unsaved details-article" spellcheck=false contenteditable="true"></span>
+                <span id="details-qty1" class="unsaved details-qtyprice" spellcheck=false contenteditable="true"></span>
+                <span id="details-qty2" class="unsaved details-qtyprice" spellcheck=false contenteditable="true"></span>
+                <span id="details-qty3" class="unsaved details-qtyprice" spellcheck=false contenteditable="true">0€</span>
+            </div>
+            <div class="line">
+                <span id="details-article" class="unsaved details-article" spellcheck=false contenteditable="true"></span>
+                <span id="details-qty1" class="unsaved details-qtyprice" spellcheck=false contenteditable="true"></span>
+                <span id="details-qty2" class="unsaved details-qtyprice" spellcheck=false contenteditable="true"></span>
+                <span id="details-qty3" class="unsaved details-qtyprice" spellcheck=false contenteditable="true">0€</span>
+            </div>
+            <div class="line">
+                <span id="details-article" class="unsaved details-article" spellcheck=false contenteditable="true"></span>
+                <span id="details-qty1" class="unsaved details-qtyprice" spellcheck=false contenteditable="true"></span>
+                <span id="details-qty2" class="unsaved details-qtyprice" spellcheck=false contenteditable="true"></span>
+                <span id="details-qty3" class="unsaved details-qtyprice" spellcheck=false contenteditable="true">0€</span>
+            </div>
+            <div class="line">
+                <span id="details-article" class="unsaved details-article" spellcheck=false contenteditable="true"></span>
+                <span id="details-qty1" class="unsaved details-qtyprice" spellcheck=false contenteditable="true"></span>
+                <span id="details-qty2" class="unsaved details-qtyprice" spellcheck=false contenteditable="true"></span>
+                <span id="details-qty3" class="unsaved details-qtyprice" spellcheck=false contenteditable="true">0€</span>
+            </div>
+        </div>
+        <span id="invoice-title" class="inputs invoice-title" spellcheck=false contenteditable="true">FACTURE</span>
+        <span id="invoice-date" class="inputs invoice-date" spellcheck=false contenteditable="true">01 Janvier 2025</span>
+        <span id="invoice-subtitle" class="inputs invoice-subtitle" spellcheck=false contenteditable="true">Développement Web</span>
+        <span id="invoice-contacts" class="inputs invoice-contacts" spellcheck=false contenteditable="true">SIRET: 00000000000000 - Mail: contact@jordqn.fr - Téléphone: 01 23 45 67 89</span>
+        <span id="invoice-details" class="inputs invoice-details" spellcheck=false contenteditable="true">Remarque: TVA non applicable - Article 293b du CGI.</span>
+        <span id="invoice-address-title" class="inputs invoice-address-title" spellcheck=false contenteditable="true">Facture pour</span>
+        <span id="invoice-address" class="inputs invoice-address" spellcheck=false contenteditable="true">Entreprise, Prénom NOM<br>10 Chemin du Pont-Neuf<br>75000 Paris<br>contact@entreprise.fr</span>
+        <span id="invoice-number-title" class="inputs invoice-number-title" spellcheck=false contenteditable="true">N° de facture</span>
+        <span id="invoice-number" class="inputs invoice-number" spellcheck=false contenteditable="true">1</span>
+        <span id="invoice-week-title" class="inputs invoice-week-title" spellcheck=false contenteditable="true">Semaine</span>
+        <span id="invoice-week" class="inputs invoice-week" spellcheck=false contenteditable="true">1</span>
+        <span id="result-adjustments" class="unsaved result-adjustments" spellcheck=false contenteditable="true">0€</span>
+    </div>
+</body>
+</html>
